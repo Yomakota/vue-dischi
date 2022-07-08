@@ -1,6 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import './vars';
 
+html {
+    font-size: 100%;
+}
+
 body {
     background-color: $main-background-color;
 }

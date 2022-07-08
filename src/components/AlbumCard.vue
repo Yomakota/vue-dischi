@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div class="container-card">
         <div class="card mb-2">
             <img class="pb-3" :src="info.poster" :alt="info.title">
-            <div class="title pb-1">{{info.title}}</div>
-            <div class="subtitle">{{info.author}}</div>
-            <div class="date">{{info.year}}</div>
+            <div class="title pb-1">{{ info.title }}</div>
+            <div class="subtitle">{{ info.author }}</div>
+            <div class="date">{{ info.year }}</div>
         </div>
     </div>
 </template>
@@ -16,12 +16,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../assets/scss/style.scss";
+
+
+
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $card-color;
     height: 100%;
+    padding: 0.5em 1em;
 
     img {
         width: 100%;
@@ -34,7 +38,7 @@ export default {
         text-align: center;
     }
 
-    .subtitle, 
+    .subtitle,
     .date {
         color: grey;
     }
