@@ -1,47 +1,34 @@
 <template>
-    <div class="container-card">
-        <div class="card">
-            <img class="pb-3" :src="info.poster" :alt="info.title">
-            <div class="title pb-3">{{ info.title }}</div>
-            <div class="subtitle">{{ info.author }}</div>
+    <div class="albums">
+        <div class="album d-flex flex-column align-items-center h-100 p-3">
+            <img class="w-100 pb-3" :src="info.poster" :alt="info.title">
+            <div class="title text-uppercase text-center pb-3">{{ info.title }}</div>
+            <div class="subtitle text-center">{{ info.author }}</div>
             <div class="date">{{ info.year }}</div>
         </div>
     </div>
 </template>
+
 <script>
 export default {
     name: "AlbumCard",
     props: ['info']
 }
 </script>
+
 <style lang="scss" scoped>
 @import "../assets/scss/style.scss";
-
-
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.album {
     background-color: $card-color;
-    height: 100%;
     color: white;
-    padding: .5em 1em;
-
-    img {
-        width: 100%;
-    }
 
     .title {
-        text-transform: uppercase;
-        text-align: center;
         font-weight: 900;
     }
 
     .subtitle,
     .date {
         color: grey;
-        text-align: center;
         font-size: 12px;
     }
 }

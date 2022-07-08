@@ -1,0 +1,19 @@
+.hourglass:after {
+    content: " ";
+    display: block;
+    width: 50%;
+    border: 30px solid white;
+    border-radius: 50%;
+    border-color: white transparent;
+    animation: hourglass 2s infinite;
+}
+
+@keyframes hourglass {
+    0% {
+        transform: rotate(0);
+    }
+    
+    100% {
+        transform: rotate(1800deg);
+    }
+}
