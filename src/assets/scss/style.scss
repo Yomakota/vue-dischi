@@ -1,10 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 @import './vars';
-
-html {
-    font-size: 100%;
-}
+@import '~@fontsource/raleway/index.css';
 
 body {
     background-color: $main-background-color;
+    height: 100vh;
+    font-family: $font;
 }

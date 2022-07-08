@@ -1,8 +1,8 @@
 <template>
     <div class="container-card">
-        <div class="card mb-2">
+        <div class="card">
             <img class="pb-3" :src="info.poster" :alt="info.title">
-            <div class="title pb-1">{{ info.title }}</div>
+            <div class="title pb-3">{{ info.title }}</div>
             <div class="subtitle">{{ info.author }}</div>
             <div class="date">{{ info.year }}</div>
         </div>
@@ -25,7 +25,8 @@ export default {
     align-items: center;
     background-color: $card-color;
     height: 100%;
-    padding: 0.5em 1em;
+    color: white;
+    padding: .5em 1em;
 
     img {
         width: 100%;
@@ -33,14 +34,15 @@ export default {
 
     .title {
         text-transform: uppercase;
-        color: white;
-        font-weight: 500;
         text-align: center;
+        font-weight: 900;
     }
 
     .subtitle,
     .date {
         color: grey;
+        text-align: center;
+        font-size: 12px;
     }
 }
 </style>

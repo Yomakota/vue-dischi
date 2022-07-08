@@ -2,8 +2,7 @@
     <div>
         <div class="container my-5">
             <div class="row row-cols-5">
-                <AlbumCard class="mb-5"
-                    v-for=" element, index in albums" :key="index" :info="element" />
+                <AlbumCard class="mb-3" v-for=" element, index in albums" :key="index" :info="element" />
             </div>
         </div>
     </div>
@@ -34,21 +33,18 @@ export default {
             axios.get(this.url).then((result) => {
                 this.albums = result.data.response
             })
-                .catch((err) => {
-                    console.log("Error", err);
-                });
+            .catch((err) => {
+                console.log("Error", err);
+            });
         }
     }
-
-
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/style.scss";
-
-        .container {
-            width: 60%;
-            margin: auto;
-        }
+.container {
+    width: 60%;
+    margin: auto;
+}
 </style>

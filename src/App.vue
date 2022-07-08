@@ -19,11 +19,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~bootstrap/scss/bootstrap";
 @import "./assets/scss/style.scss";
-
-body{
-  height: 100vh;
-  background-color: $main-background-color;
-}
 </style>
