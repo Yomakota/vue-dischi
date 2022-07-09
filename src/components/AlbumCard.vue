@@ -23,7 +23,7 @@ export default {
     color: white;
 
     .title {
-        font-weight: 900;
+        font-weight: 700;
     }
 
     .subtitle,
