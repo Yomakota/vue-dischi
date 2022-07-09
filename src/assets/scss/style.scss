@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
-@import './vars';
 @import '~@fontsource/raleway/index.css';
+
+@import './vars';
+@import './loader.scss';
 
 body {
     background-color: $main-background-color;
