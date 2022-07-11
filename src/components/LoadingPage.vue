@@ -1,5 +1,6 @@
 <template>
-    <div class="loader-container">
+    <div
+        class="loader-container position-absolute top-0 start-0 d-flex flex-column justify-content-center align-items-center w-100 h-100">
         <div class="loader position-absolute top-50 start-50 translate-middle">
             <div class="hourglass pb-3"></div>
             <div class="text-uppercase">Loading...</div>
@@ -19,15 +20,6 @@ export default {
 @import'../assets/scss/style.scss';
 
 .loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
     background-color: white;
 
     .loader {
