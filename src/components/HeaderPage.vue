@@ -1,7 +1,17 @@
 <template>
-    <header class="header">
-        <div class="container-fluid">
-            <img class="p-2" :src='url' :alt="logo_name">
+    <header class="header d-flex justify-content-between align-items-center ps-3 pe-3">
+        <div>
+            <img class="p-2" :src='image' :alt="logo_name">
+        </div>
+        <div>
+            <select name="" id="" v-model="valueSelect" @change="$emit('changeGenre', valueSelect)">
+                <option value="">
+                    Seleziona un genere
+                </option>
+                <option v-for="(genre, index) in genres" :key="index" :value="genre">
+                    {{ genre }}
+                </option>
+            </select>
         </div>
     </header>
 </template>
@@ -9,10 +19,12 @@
 <script>
 export default {
     name: "HeaderPage",
+    props: ['genres'],
     data() {
         return {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png',
-            logo_name: 'spotify-logo'
+            image: require('../assets/img/Spotify_logo.png'),
+            logo_name: 'spotify-logo',
+            valueSelect: '',
         }
     }
 }
@@ -23,6 +35,7 @@ export default {
 
 .header {
     background-color: $card-color;
+
     img {
         height: 60px;
     }
