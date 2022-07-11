@@ -20,21 +20,27 @@ export default {
         AlbumCard,
         LoadingPage,
     },
-    props: ['genre'],
+    props: ['genre', 'author'],
     data() {
         return {
             url: "https://flynn.boolean.careers/exercises/api/array/music",
             albums: [],
             genres: [],
+            authors: [],
             isLoaded: false
         }
     },
     computed: {
         filterAlbum() {
-            if (this.genre === '') {
+            if (this.genre === '' && this.author === '') {
                 return this.albums;
+            } else if (this.genre !== '' && this.author === '') {
+                return this.albums.filter((element) => element.genre === this.genre)
+            } else if (this.author !== '' && this.genre === '') {
+                return this.albums.filter((element) => element.author === this.author)
+            } else {
+                return this.albums.filter((element) => element.author.includes(this.author) && element.genre.includes(this.genre))
             }
-            return this.albums.filter((element) => element.genre === this.genre)
         }
     },
 
@@ -56,6 +62,13 @@ export default {
                     }
                 });
                 this.$emit('genresStart', this.genres);
+
+                this.albums.forEach((element) => {
+                    if (!this.authors.includes(element.author)) {
+                        this.authors.push(element.author);
+                    }
+                });
+                this.$emit('authorStart', this.authors);
             })
                 .catch((err) => {
                     console.log("Error", err);

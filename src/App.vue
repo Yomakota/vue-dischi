@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <HeaderPage @changeGenre="setGenre($event)" :genres="genresList" />
-    <MainPage :genre="selectValue" @genresStart="setGenresList($event)" />
+    <HeaderPage @changeGenre="setGenre($event)" :genres="genresList" @changeAuthor="setAuthor($event)"
+      :authors="authorsList" />
+    <MainPage @genresStart="setGenresList($event)" :genre="selectValue" @authorStart="setAuthorList($event)"
+      :author="selectValueAuthor" />
   </div>
 </template>
 
@@ -19,6 +21,8 @@ export default {
     return {
       selectValue: '',
       genresList: [],
+      selectValueAuthor: '',
+      authorsList: [],
     }
   },
   methods: {
@@ -28,6 +32,12 @@ export default {
     setGenresList(value) {
       this.genresList = value;
     },
+    setAuthor(value) {
+      this.selectValueAuthor = value;
+    },
+    setAuthorList(value) {
+      this.authorsList = value;
+    }
   }
 }
 </script>

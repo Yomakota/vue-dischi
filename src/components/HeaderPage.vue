@@ -6,10 +6,18 @@
         <div>
             <select name="" id="" v-model="valueSelect" @change="$emit('changeGenre', valueSelect)">
                 <option value="">
-                    Seleziona un genere
+                    Select genre
                 </option>
                 <option v-for="(genre, index) in genres" :key="index" :value="genre">
                     {{ genre }}
+                </option>
+            </select>
+            <select name="" id="" v-model="selectValueAuthor" @change="$emit('changeAuthor', selectValueAuthor)">
+                <option value="">
+                    Select author
+                </option>
+                <option v-for="(author, index) in authors" :key="index" :value="author">
+                    {{ author }}
                 </option>
             </select>
         </div>
@@ -19,12 +27,13 @@
 <script>
 export default {
     name: "HeaderPage",
-    props: ['genres'],
+    props: ['genres', 'authors'],
     data() {
         return {
             image: require('../assets/img/Spotify_logo.png'),
             logo_name: 'spotify-logo',
             valueSelect: '',
+            selectValueAuthor: '',
         }
     }
 }
