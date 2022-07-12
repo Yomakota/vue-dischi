@@ -13,7 +13,6 @@
 import axios from 'axios';
 import AlbumCard from './AlbumCard.vue'
 import LoadingPage from './LoadingPage.vue'
-
 export default {
     name: "MainPage",
     components: {
@@ -43,26 +42,22 @@ export default {
             }
         }
     },
-
     mounted() {
         setTimeout(() => {
             this.getAlbumCard();
         }, 2000);
     },
-
     methods: {
         getAlbumCard() {
             axios.get(this.url).then((result) => {
                 this.albums = result.data.response;
                 this.isLoaded = true;
-
                 this.albums.forEach((element) => {
                     if (!this.genres.includes(element.genre)) {
                         this.genres.push(element.genre);
                     }
                 });
                 this.$emit('genresStart', this.genres);
-
                 this.albums.forEach((element) => {
                     if (!this.authors.includes(element.author)) {
                         this.authors.push(element.author);
