@@ -4,7 +4,8 @@
             <img class="p-2" :src='image' :alt="logo_name">
         </div>
         <div>
-            <select name="" id="" v-model="valueSelect" @change="$emit('changeGenre', valueSelect)">
+            <select class="select border-0 mx-5 text-center" v-model="valueSelect"
+                @change="$emit('changeGenre', valueSelect)">
                 <option value="">
                     Select genre
                 </option>
@@ -12,7 +13,8 @@
                     {{ genre }}
                 </option>
             </select>
-            <select name="" id="" v-model="selectValueAuthor" @change="$emit('changeAuthor', selectValueAuthor)">
+            <select class="select border-0 text-center" v-model="selectValueAuthor"
+                @change="$emit('changeAuthor', selectValueAuthor)">
                 <option value="">
                     Select author
                 </option>
@@ -47,6 +49,12 @@ export default {
 
     img {
         height: 60px;
+    }
+
+    .select {
+        background-color: inherit;
+        color: white;
+        appearance: none;
     }
 }
 </style>
