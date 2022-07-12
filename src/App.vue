@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <HeaderPage @changeGenre="setGenre($event)" :genres="genresList" @changeAuthor="setAuthor($event)"
-      :authors="authorsList" />
-    <MainPage @genresStart="setGenresList($event)" :genre="selectValue" @authorStart="setAuthorList($event)"
+    <HeaderPage @changeGenre="setGenre" :genres="genresList" @changeAuthor="setAuthor" :authors="authorsList" />
+    <MainPage @genresStart="setGenresList" :genre="selectValue" @authorStart="setAuthorList"
       :author="selectValueAuthor" />
   </div>
 </template>
 
 <script>
 import HeaderPage from "./components/HeaderPage.vue";
-import MainPage from "./components/ListAlbums.vue";
+import MainPage from "./components/MainPage.vue";
 
 export default {
   name: 'App',

@@ -53,7 +53,7 @@ export default {
 
     .select {
         background-color: inherit;
-        color: white;
+        color: #17d860;
         appearance: none;
     }
 }
